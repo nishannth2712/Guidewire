@@ -19,6 +19,30 @@ The goal is to build an AI-powered parametric insurance platform that provides a
 9. Mismatch between traditional insurance models and weekly earning cycle of gig workers
 
 
+##  Stakeholders
+
+1. Delivery Partners (Gig Workers)  
+   Face high income volatility and lack of social security due to unpredictable daily earnings.
+
+2. E-commerce & Q-commerce Platforms (e.g., Amazon, Flipkart, Zepto)  
+   Depend on a stable workforce for last-mile delivery; high partner turnover leads to increased recruitment costs and delivery delays.
+
+3. Gig Platforms (e.g., Swiggy, Zomato, Uber)  
+   Experience rider churn and reduced service reliability when workers shift to more stable jobs.
+
+4. Traditional Insurance Providers  
+   Struggle to offer micro-premiums or real-time coverage aligned with the dynamic risk faced by delivery partners.
+
+5. End Consumers  
+   Affected by surge pricing and inconsistent delivery timelines when delivery partner availability is unstable.
+
+6. Government & Regulatory Bodies  
+   Face challenges in supporting a large workforce without formal employment benefits or financial protection.
+
+7. Financial Institutions  
+   Often deny loans or credit due to the lack of stable and provable income among gig workers.
+
+
 ## User Persona
 
 ### Persona: E-commerce Delivery Partner
@@ -113,6 +137,53 @@ The goal is to build an AI-powered parametric insurance platform that provides a
   - Active policy  
   - Earnings protected  
   - Claim history
+
+##  Premium Plan
+
+The platform offers simple weekly insurance plans designed for delivery partners. These plans are affordable and provide income protection during unexpected disruptions.
+
+### Base Plans
+
+- Basic Plan  
+  ₹20/week → Covers up to ₹500  
+
+- Standard Plan  
+  ₹40/week → Covers up to ₹1000  
+
+- Premium Plan  
+  ₹60/week → Covers up to ₹1500  
+
+### How It Works
+
+The premium is calculated weekly based on the selected plan and the risk level in the user’s area.
+
+For example:
+- If the weather conditions are normal → lower premium  
+- If heavy rain or extreme heat is expected → slightly higher premium  
+This ensures fair pricing based on real conditions.
+
+### Triggers for Claim
+The system automatically triggers claims when certain conditions are met:
+- Heavy rainfall  
+- High temperature  
+- Pollution levels  
+- Curfew or restricted movement  
+No manual claim process is required.
+
+### Add-ons (Optional)
+Users can choose extra protection:
+- Pollution coverage → +₹10  
+- Curfew coverage → +₹15  
+
+### Benefits
+- Simple weekly payment  
+- No paperwork for claims  
+- Quick payout during disruptions  
+- Flexible plans based on user needs  
+
+### FUTURE
+In future, delivery platforms can also contribute to the premium to support their workers and improve retention.
+
 
 ## AI/ML Integration Plan
 
@@ -229,5 +300,64 @@ AI analyzes user patterns to improve system efficiency.
 ### 7. Deployment
 - Cloud Platforms (AWS / Firebase / Render)  
 - Ensures scalability, reliability, and real-time access
+
+
+## Adversarial Defense & Anti-Spoofing Strategy
+
+To prevent misuse of the system through GPS spoofing and coordinated fraud, the platform uses multiple validation layers instead of relying only on location data.
+
+---
+
+### 1. Differentiation Strategy
+
+The system differentiates between genuine users and fraudulent actors by analyzing behavior patterns rather than just location.
+
+- Real users show consistent movement (delivery routes, stops, activity patterns)  
+- Spoofed users often show unrealistic or static movement (no actual travel)  
+
+AI models compare:
+- Movement consistency  
+- Speed and route patterns  
+- Activity vs claimed disruption  
+
+This helps identify whether the user is actually working in that location or faking presence.
+
+---
+
+### 2. Data Points Used for Fraud Detection
+
+The system uses multiple data sources beyond GPS:
+
+- Device motion data (accelerometer, step movement)  
+- App activity logs (screen usage, session timing)  
+- Network signals (IP address consistency, network type)  
+- Delivery activity (orders completed, route history)  
+- Time patterns (sudden claims from multiple users at same time)  
+- Historical claim behavior  
+
+By combining these signals, the system detects:
+- Fake stationary users  
+- Mass coordinated claims  
+- Unusual claim spikes in specific regions  
+
+---
+
+### 3. Handling Flagged Claims (UX Balance)
+
+The system ensures that genuine users are not unfairly penalized.
+
+- Claims are not immediately rejected  
+- Suspicious cases are marked as "Under Review"  
+- Users are asked for lightweight verification (e.g., app activity confirmation)  
+
+For genuine users:
+- Claims are processed with minimal delay  
+
+For suspicious cases:
+- Additional validation is applied before payout  
+
+This approach balances:
+- Fraud prevention  
+- User trust and fairness  
 
   
